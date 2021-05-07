@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Sri Lanka Vehicle Info</string>
+    <string name="hint">e.g KA-1010, 15-3456</string>
+    <string name="VehicleNumber">Vehicle Number</string>
+    <string name="AbsoluteOwner">Absolute Owner</string>
+    <string name="EngineNo">Engine No</string>
+    <string name="ClassOfVehicle">Class Of Vehicle</string>
+    <string name="Make">Make</string>
+    <string name="Model">Model</string>
+    <string name="YearOfManufacture">Year Of Manufacture</string>
+    <string name="infoname">Vehicle Info</string>
+    <string name="Results">Results</string>
+    <string name="find_btn">Find</string>
+    <string name="error_msg">The vehicle number you used is incorrect <br/> or for some other reason the data is not available.<br/>Please double check and try again</string>
+    <string name="welcom_note">This is a 100% free app that allows you to access data through the Department of Motor Traffic\'s API, it never collects your data. (Beta 1.0.2.1)</string>
+    <string name="main_note">Welcome to the app, enter the vehicle number you need the data to continue working and click the "FIND" button</string>
+    <string name="serch_note">Looking for data related to the vehicle number you entered, please wait a moment</string>
+    <string name="tital">Notices</string>
+    <string name="ok">OK</string>
+
+
+</resources>

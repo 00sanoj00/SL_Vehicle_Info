@@ -1,0 +1,69 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="sflash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/mainheadbg</item>
+        <item name="android:navigationBarColor">@color/mainheadbg</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+
+    <style name="txtfeatureStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1.2</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:textSize">@dimen/small_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">start</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:maxEms">5</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:padding">@dimen/height_width_10dp</item>
+
+    </style>
+
+    <style name="txtFeatureName">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/small_medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:maxLines">10</item>
+        <item name="android:paddingLeft">@dimen/height_width_10dp</item>
+        <item name="android:paddingRight">@dimen/height_width_10dp</item>
+        <item name="android:paddingTop">@dimen/height_width_15dp</item>
+        <item name="android:paddingBottom">@dimen/height_width_15dp</item>
+
+    </style>
+
+    <style name="txtFeatureStatus">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1.2</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/small_medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:padding">@dimen/height_width_10dp</item>
+
+    </style>
+
+    <style name="txtfeatureNameStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:textSize">@dimen/small_medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:padding">@dimen/height_width_10dp</item>
+
+    </style>
+</resources>

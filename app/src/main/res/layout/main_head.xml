@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_192sdp">
+
+    <RelativeLayout
+        android:background="@drawable/rounder_head"
+        android:layout_width="match_parent"
+        android:layout_height="165dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:textSize="@dimen/_25sdp"
+            android:text="@string/app_name"
+            style="@style/txtFeatureStatus"/>
+
+    </RelativeLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/vhnumber"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:textAllCaps="true"
+            android:inputType="textCapCharacters"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:textColorHint="@color/text_hint"
+            android:hint="@string/hint"
+            android:textColor="@color/black"
+            android:paddingLeft="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_46sdp"
+            android:background="@drawable/rounder_edit_text"
+            tools:ignore="TextFields" />
+
+
+    <Button
+        android:id="@+id/find_btn"
+        android:layout_width="@dimen/_125sdp"
+        android:background="@drawable/btn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:text="@string/find_btn"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_height="@dimen/_30sdp"/>
+
+
+
+</RelativeLayout>
