@@ -10,13 +10,12 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="?actionBarSize"
+        android:layout_marginBottom="@dimen/_65sdp"
         android:orientation="vertical">
         <include
             layout="@layout/main_head"/>
 
-        <include
-            layout="@layout/more_main_center"/>
+
     </LinearLayout>
 
         <include

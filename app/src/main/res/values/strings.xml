@@ -17,6 +17,11 @@
     <string name="serch_note">Looking for data related to the vehicle number you entered, please wait a moment</string>
     <string name="tital">Notices</string>
     <string name="ok">OK</string>
+    <string name="dectabtitial">Revenue License Status</string>
+    <string name="isdate">Issued Date</string>
+    <string name="exdate">Expiry Date</string>
+    <string name="licenno">License No</string>
+    <string name="waite">Please wait a bit..</string>
 
 
 </resources>

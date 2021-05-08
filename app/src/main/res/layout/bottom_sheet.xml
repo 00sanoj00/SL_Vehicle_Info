@@ -3,31 +3,33 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:id="@+id/bottom_sheet"
               android:layout_width="match_parent"
-              android:layout_height="?actionBarSize"
+              android:layout_height="@dimen/_65sdp"
               android:background="#fff"
               android:orientation="vertical"
               app:behavior_hideable="true"
-              app:behavior_peekHeight="?actionBarSize"
+              app:behavior_peekHeight="@dimen/_65sdp"
     app:layout_behavior="@string/bottom_sheet_behavior">
 
 
     <RelativeLayout
             android:id="@+id/rlMenu"
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
+            android:layout_height="@dimen/_65sdp"
             android:background="@color/mainheadbg">
 
         <TextView
-                android:id="@+id/txtTile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_centerInParent="true"
-                android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textSize="@dimen/small_medium"
-                android:text="(Beta 1.0.2.1)"
-                android:textStyle="bold"/>
+            android:id="@+id/note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:textSize="@dimen/_12sdp"
+            android:text="@string/main_note"
+            style="@style/txtfeatureNameStyle"/>
+
+
     </RelativeLayout>
 </LinearLayout>

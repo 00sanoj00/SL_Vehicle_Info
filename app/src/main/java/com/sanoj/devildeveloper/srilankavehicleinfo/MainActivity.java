@@ -16,12 +16,17 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.gdacciaro.iOSDialog.iOSDialog;
 import com.gdacciaro.iOSDialog.iOSDialogBuilder;
 import com.gdacciaro.iOSDialog.iOSDialogClickListener;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -46,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTV5;
     private TextView mTV6;
     private TextView mTV7;
+    private TextView mLTV1;
+    private TextView mLTV2;
+    private TextView mLTV3;
     private EditText mEditText;
     private TextView mNote;
     private String myvheno;
@@ -54,18 +62,14 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout mLinear;
     private LinearLayout mAnimiLinear;
     private LottieAnimationView mLottieView;
-    private String mVehicleNumber;
-    private String mAbsoluteOwner;
-    private String mEngineNo;
-    private String mClassOfVehicle;
-    private String mMake;
-    private String mModel;
-    private String mYearOfManufacture;
     private String recodeinfo = "No Record Found";
     private String ownernote = "UNABLE TO SHOW OWNER";
     private String serch_note;
     private String error_note;
     private String welcome_note;
+    private String URL_Data;
+    private RequestQueue reqQue;
+    private String liceninfoURL = "http://api.lankagate.gov.lk:8280/RevenueLicenseStatus/1.0/revstatusProxy?vRegNo=";
 
 
     @Override
@@ -74,13 +78,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mFind = findViewById(R.id.find_btn);
+
         mEditText = findViewById(R.id.vhnumber);
         mEditText.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+
         mLinear = findViewById(R.id.centerHome);
         mAnimiLinear = findViewById(R.id.animation);
         mLottieView = findViewById(R.id.animationView);
         mNote = findViewById(R.id.note);
+
         RequestQueue queue = Volley.newRequestQueue(this);
+
         licen();
 
         mTV1 = findViewById(R.id.tv1);
@@ -90,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
         mTV5 = findViewById(R.id.tv5);
         mTV6 = findViewById(R.id.tv6);
         mTV7 = findViewById(R.id.tv7);
+
+        mLTV1 = findViewById(R.id.ltv1);
+        mLTV2 = findViewById(R.id.ltv2);
+        mLTV3 = findViewById(R.id.ltv3);
 
         serch_note = getString(R.string.serch_note);
         error_note = getString(R.string.error_msg);
@@ -116,6 +128,9 @@ public class MainActivity extends AppCompatActivity {
                             "      </v1:GetVehicleLimitedInfo>\n" +
                             "   </soapenv:Body>\n" +
                             "</soapenv:Envelope>";
+
+                    URL_Data = liceninfoURL+mEditText.getText().toString();
+                    Log.d("SANOJL",  URL_Data);
                     requestWithSomeHttpHeaders();
                 }catch (Exception IO) {
                     Log.d("Error_APP", IO.toString());
@@ -138,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         myresponxml = new ByteArrayInputStream(response.getBytes(StandardCharsets.UTF_8));
                         try1();
+                        try2();
 
                         if(mTV1.getText().toString().equals("")||mTV3.getText().toString().equals("")||mTV4.getText().toString().equals("")||mTV5.getText().toString().equals("")||mTV6.getText().toString().equals("")||mTV7.getText().toString().equals("")){
                             mLinear.setVisibility(View.GONE);
@@ -259,6 +275,49 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .build().show();
+    }
+
+
+    public void try2(){
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL_Data, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    mLTV1.setText(response.getString("License_Issued_Date"));
+                    mLTV2.setText(response.getString("License_Expiry_Date"));
+                    mLTV3.setText(response.getString("License_No"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    mLTV1.setText(recodeinfo);
+                    mLTV2.setText(recodeinfo);
+                    mLTV3.setText(recodeinfo);
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+                mLTV1.setText(recodeinfo);
+                mLTV2.setText(recodeinfo);
+                mLTV3.setText(recodeinfo);
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Host","api.lankagate.gov.lk:8280");
+                params.put("Connection","keep-alive");
+                params.put("Accept","application/json, text/javascript, */*; q=0.01");
+                params.put("Authorization","Bearer  798f7fb2-ecce-3c76-a675-143038467dd6");
+                params.put("User-Agent","Mozilla/5.0 (Linux; Android 10; SM-M201F Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/81.0.4044.138 Mobile Safari/537.36");
+                params.put("X-Requested-With","lk.icta.mobile.apps.dmt");
+                params.put("Accept-Encoding","gzip, deflate");
+                params.put("Accept-Language","en-GB,en-US;q=0.9,en;q=0.8");
+                return params;
+            }
+        };
+        reqQue = Volley.newRequestQueue(this);
+        reqQue.add(request);
     }
 
 }

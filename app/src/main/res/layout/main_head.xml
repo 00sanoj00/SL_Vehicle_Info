@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_192sdp">
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_200sdp">
+
 
     <RelativeLayout
+        android:id="@+id/fixed"
+        android:layout_marginBottom="@dimen/_5sdp"
         android:background="@drawable/rounder_head"
         android:layout_width="match_parent"
-        android:layout_height="165dp">
+        android:layout_height="@dimen/_100sdp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,7 +34,7 @@
             android:layout_width="match_parent"
             android:id="@+id/vhnumber"
             android:layout_height="@dimen/_35sdp"
-            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
             android:layout_marginEnd="@dimen/_20sdp"
             android:textAllCaps="true"
             android:inputType="textCapCharacters"
@@ -36,22 +43,25 @@
             android:hint="@string/hint"
             android:textColor="@color/black"
             android:paddingLeft="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_46sdp"
             android:background="@drawable/rounder_edit_text"
             tools:ignore="TextFields" />
 
 
     <Button
+        android:layout_marginTop="@dimen/_35sdp"
+        android:layout_below="@+id/fixed"
         android:id="@+id/find_btn"
         android:layout_width="@dimen/_125sdp"
         android:background="@drawable/btn"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
         android:text="@string/find_btn"
-        android:layout_marginBottom="@dimen/_5sdp"
         android:layout_height="@dimen/_30sdp"/>
 
 
+    </RelativeLayout>
 
-</RelativeLayout>
+    <include
+        layout="@layout/more_main_center"/>
+
+</LinearLayout>

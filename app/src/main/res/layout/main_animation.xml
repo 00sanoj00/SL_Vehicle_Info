@@ -25,22 +25,6 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"/>
 
-
-
-        <TextView
-            android:id="@+id/note"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
-            android:textSize="@dimen/_12sdp"
-            android:text="@string/main_note"
-            style="@style/txtfeatureNameStyle"/>
-
-
         </LinearLayout>
     </ScrollView>
 
