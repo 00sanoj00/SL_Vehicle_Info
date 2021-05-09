@@ -7,15 +7,14 @@
     android:layout_height="match_parent">
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_200sdp">
+    android:layout_height="@dimen/_150sdp">
 
 
     <RelativeLayout
         android:id="@+id/fixed"
-        android:layout_marginBottom="@dimen/_5sdp"
         android:background="@drawable/rounder_head"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_100sdp">
+        android:layout_height="@dimen/_132sdp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,8 +32,8 @@
         <EditText
             android:layout_width="match_parent"
             android:id="@+id/vhnumber"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_centerInParent="true"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_alignParentBottom="true"
             android:layout_marginEnd="@dimen/_20sdp"
             android:textAllCaps="true"
             android:inputType="textCapCharacters"
@@ -42,24 +41,14 @@
             android:textColorHint="@color/text_hint"
             android:hint="@string/hint"
             android:textColor="@color/black"
-            android:paddingLeft="@dimen/_5sdp"
+            android:paddingStart="@dimen/_5sdp"
             android:background="@drawable/rounder_edit_text"
-            tools:ignore="TextFields" />
-
-
-    <Button
-        android:layout_marginTop="@dimen/_35sdp"
-        android:layout_below="@+id/fixed"
-        android:id="@+id/find_btn"
-        android:layout_width="@dimen/_125sdp"
-        android:background="@drawable/btn"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        android:text="@string/find_btn"
-        android:layout_height="@dimen/_30sdp"/>
-
-
+            tools:ignore="RtlSymmetry,TextFields" />
     </RelativeLayout>
+
+    <include
+        layout="@layout/find_btn"/>
+
 
     <include
         layout="@layout/more_main_center"/>

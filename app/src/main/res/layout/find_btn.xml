@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:id="@+id/find_btn"
+        android:layout_width="@dimen/_125sdp"
+        android:background="@drawable/btn"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:text="@string/find_btn"
+        android:layout_height="@dimen/_30sdp"/>
+
+</RelativeLayout>

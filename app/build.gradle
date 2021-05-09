@@ -41,4 +41,5 @@ dependencies {
     def lottieVersion = "3.7.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation 'com.gdacciaro:iosdialog:1.0.3'
+    implementation 'com.vlstr:blurdialog:1.0.0'
 }
