@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="mainheadbg">#ffca28</color>
+    <color name="colorGrey">#CECECE</color>
     <color name="text_hint">#b0bec5</color>
     <color name="main_text">#5D6061</color>
     <color name="sectabrow">#FDF4D9</color>
